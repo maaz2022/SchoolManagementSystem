@@ -13,7 +13,7 @@ export default function DashboardLayout({
         <div className=" w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4 gap-2">
           <Link href='/' className="flex items-center justify-center lg:justify-start">
               <Image src='/school-bag.png' alt="logo" width={30} height={30}/>
-                      <span className="hidden lg:block">Hogwarts</span>    
+                  <span className="hidden lg:block font-bold ml-2">Hogwarts</span>    
           </Link>
           <Menu/>
         </div>
