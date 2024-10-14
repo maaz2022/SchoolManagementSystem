@@ -1,8 +1,8 @@
 'use client'
-import { count } from 'console';
+
 import Image from 'next/image';
 import React from 'react'
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 const data = [
   {
