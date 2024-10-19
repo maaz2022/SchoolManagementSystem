@@ -39,7 +39,7 @@ const SingleTeacherPage = () => {
                 </div>
             </div>
         </div>
-         <div className='flex-1'></div>
+         <div className='flex-1'></div> 
       </div>
      
       
