@@ -1,3 +1,4 @@
+import BigCalendar from '@/components/BigCalender'
 import Image from 'next/image'
 import React from 'react'
 
@@ -39,10 +40,66 @@ const SingleTeacherPage = () => {
                 </div>
             </div>
         </div>
-         <div className='flex-1'></div> 
+         <div className='flex-1 flex gap-4 justify-between flex-wrap'>
+            <div  className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]'>
+                <Image
+                src='/singleAttendance.png'
+                alt='attendee'
+                width={24}
+                height={24}
+                className='w-6 h-6'
+            />    
+            <div>
+                <h1 className='text-xl font-semibold'>90%</h1>
+                <span className='text-gray-400 text-sm'>Attendence</span>
+            </div>
+            </div>
+            <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%] '>
+                <Image
+                src='/singleLesson.png'
+                alt='attendee'
+                width={24}
+                height={24}
+                className='w-6 h-6'
+            />    
+            <div>
+                <h1 className='text-xl font-semibold'>6</h1>
+                <span className='text-gray-400 text-sm'>Lessons</span>
+            </div>
+            </div>
+            <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]'>
+                <Image
+                src='/singleBranch.png'
+                alt='attendee'
+                width={24}
+                height={24}
+                className='w-6 h-6'
+            />    
+            <div>
+                <h1 className='text-xl font-semibold'>2</h1>
+                <span className='text-gray-400 text-sm'>Branhces</span>
+            </div>
+            </div>
+            <div className='bg-white p-4 rounded-md flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]'>
+                <Image
+                src='/singleClass.png'
+                alt='attendee'
+                width={24}
+                height={24}
+                className='w-6 h-6'
+            />    
+            <div>
+                <h1 className='text-xl font-semibold'>6</h1>
+                <span className='text-gray-400 text-sm'>Classes</span>
+            </div>
+            </div>
+        </div> 
       </div>
+      <div className='mt-4 bg-white rounded-md p-4 h-[800px]'>
+            <h1>Teacher&apos;s Schedule</h1>
+            <BigCalendar/>
+        </div>
      
-      
       </div>
       <div className='w-full xl:w-1/3'>R</div>
     </div>
