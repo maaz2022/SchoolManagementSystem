@@ -1,3 +1,4 @@
+import FormModel from '@/components/FormModel'
 import Pagination from '@/components/Pagination'
 import TeacherTable from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
@@ -56,16 +57,20 @@ const renderRow = (item: Exam) => (
 
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/lesson/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-              <Image src="/edit.png" alt="" width={16} height={16} />
-            </button>
-          </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+            <>
+          <Link href={`/list/exams/${item.id}`}>
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100">
+              <Image src="/edit.png" alt="" width={16} height={16} />
+            </button> */}
+          <FormModel table='exam' type='update' data={item}/>
+          </Link>
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple-100">
               <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            </button> */}
+          <FormModel table='exam' type='delete' id={item.id}/>
             
+            </>
           )}
         </div>
       </td>
@@ -84,9 +89,10 @@ const renderRow = (item: Exam) => (
           <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
             <Image src='/sort.png' alt='filter' width={14} height={14}/>
           </button>
-          <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
+          {/* <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
             <Image src='/icons8-plus-24.png' alt='filter' width={14} height={14}/>
-          </button>
+          </button> */}
+          <FormModel table='exam' type='create'/>
         </div>
       </div>
       </div>

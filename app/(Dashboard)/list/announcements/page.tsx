@@ -1,3 +1,4 @@
+import FormModel from '@/components/FormModel'
 import Pagination from '@/components/Pagination'
 import TeacherTable from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
@@ -49,16 +50,21 @@ const renderRow = (item: Announcement) => (
       <td className="hidden md:table-cell">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
+            {role === "admin" && (
+              <>
           <Link href={`/list/announcement/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100">
               <Image src="/edit.png" alt="" width={16} height={16} />
-            </button>
-          </Link>
-          {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-              <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            </button> */}
+           <FormModel table='announcement' type='update' data={item}/>
             
+          </Link>
+        
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple-100">
+              <Image src="/delete.png" alt="" width={16} height={16} />
+            </button> */}
+            <FormModel table='announcement' type='delete' id={item.id}/>
+              </>
           )}
         </div>
       </td>

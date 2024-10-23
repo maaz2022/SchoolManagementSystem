@@ -1,9 +1,11 @@
+import FormModel from '@/components/FormModel'
 import Pagination from '@/components/Pagination'
 import TeacherTable from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
 import { assignmentsData, examsData, lessonsData, role } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
+import { it } from 'node:test'
 import React from 'react'
 
 type Assignment = {
@@ -55,16 +57,20 @@ const renderRow = (item: Assignment) => (
 
       <td>
         <div className="flex items-center gap-2">
-          <Link href={`/list/assignment/${item.id}`}>
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaSky">
-              <Image src="/edit.png" alt="" width={16} height={16} />
-            </button>
-          </Link>
           {role === "admin" && (
-            <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+            <>
+          <Link href={`/list/assignment/${item.id}`}>
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-blue-100">
+              <Image src="/edit.png" alt="" width={16} height={16} />
+            </button> */}
+          <FormModel table='assignment' type='update' data={item}/>
+          </Link>
+            {/* <button className="w-7 h-7 flex items-center justify-center rounded-full bg-purple-100">
               <Image src="/delete.png" alt="" width={16} height={16} />
-            </button>
+            </button> */}
+          <FormModel table='assignment' type='delete' id={item.id}/>
             
+            </>
           )}
         </div>
       </td>
