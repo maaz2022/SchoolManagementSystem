@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
 
+
+
 // USE LAZY LOADING
 
 // import TeacherForm from "./forms/TeacherForm";
@@ -15,12 +17,22 @@ const TeacherForm = dynamic(() => import("./Forms/TeacherForm"), {
 const StudentForm = dynamic(() => import("./Forms/StudentForm"), {
   loading: () => <h1>Loading...</h1>,
 });
+const ParentForm = dynamic(() => import("./Forms/ParentForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const ClassForm = dynamic(() => import("./Forms/ClassForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
 } = {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
-  student: (type, data) => <StudentForm type={type} data={data} />
+  student: (type, data) => <StudentForm type={type} data={data} />,
+  parent: (type, data) => <ParentForm type={type} data={data} />,
+  class: (type, data) => <ClassForm type={type} data={data} />
+
+
 };
 
 const FormModal = ({
