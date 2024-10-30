@@ -83,9 +83,10 @@ const renderRow = (item: Announcement) => (
           <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
             <Image src='/sort.png' alt='filter' width={14} height={14}/>
           </button>
-          <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
+          {/* <button className='w-8 h-8 flex items-center justify-center rounded-full bg-yellow-200'>
             <Image src='/icons8-plus-24.png' alt='filter' width={14} height={14}/>
-          </button>
+          </button> */}
+           <FormModel table='announcement' type='create'/>
         </div>
       </div>
       </div>

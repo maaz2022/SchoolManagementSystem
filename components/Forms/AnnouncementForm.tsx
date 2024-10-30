@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import InputField from "../InputField";
+import { table } from "console";
 
 
 const schema = z.object({
@@ -23,7 +24,7 @@ const schema = z.object({
 
 type Inputs = z.infer<typeof schema>;
 
-const ClassForm = ({
+const AnnouncementForm = ({
   type,
   data,
 }: {
@@ -44,7 +45,7 @@ const ClassForm = ({
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Create a new class</h1>
+      <h1 className="text-xl font-semibold">Create a new announcement</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
@@ -112,4 +113,4 @@ const ClassForm = ({
   );
 };
 
-export default ClassForm;
+export default AnnouncementForm;

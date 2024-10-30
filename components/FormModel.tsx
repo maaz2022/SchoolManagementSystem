@@ -6,11 +6,6 @@ import { useState } from "react";
 
 
 
-// USE LAZY LOADING
-
-// import TeacherForm from "./forms/TeacherForm";
-// import StudentForm from "./forms/StudentForm";
-
 const TeacherForm = dynamic(() => import("./Forms/TeacherForm"), {
   loading: () => <h1>Loading...</h1>,
 });
@@ -23,6 +18,27 @@ const ParentForm = dynamic(() => import("./Forms/ParentForm"), {
 const ClassForm = dynamic(() => import("./Forms/ClassForm"), {
   loading: () => <h1>Loading...</h1>,
 });
+const SubjectForm = dynamic(() => import("./Forms/SubjectForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const ExamsForm = dynamic(() => import("./Forms/ExamsForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const LessonForm = dynamic(() => import("./Forms/LessonForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const ResultForm = dynamic(() => import("./Forms/ResultForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const AnnouncementForm = dynamic(() => import("./Forms/AnnouncementForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const AssignmentForm = dynamic(() => import("./Forms/AssignmentForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
+const EventForm = dynamic(() => import("./Forms/EventForm"), {
+  loading: () => <h1>Loading...</h1>,
+});
 
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
@@ -30,7 +46,14 @@ const forms: {
   teacher: (type, data) => <TeacherForm type={type} data={data} />,
   student: (type, data) => <StudentForm type={type} data={data} />,
   parent: (type, data) => <ParentForm type={type} data={data} />,
-  class: (type, data) => <ClassForm type={type} data={data} />
+  subject: (type, data) => <SubjectForm type={type} data={data} />,
+  class: (type, data) => <ClassForm type={type} data={data} />,
+  exam: (type, data) => <ExamsForm type={type} data={data} />,
+  lesson: (type, data) => <LessonForm type={type} data={data} />,
+  result: (type, data) => <ResultForm type={type} data={data} />,
+  announcement: (type, data) => <AnnouncementForm type={type} data={data} />,
+  assignment: (type, data) => <AssignmentForm type={type} data={data} />,
+  event: (type, data) => <EventForm type={type} data={data} />
 
 
 };
