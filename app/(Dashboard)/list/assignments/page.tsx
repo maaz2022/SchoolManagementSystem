@@ -2,10 +2,9 @@ import FormModel from '@/components/FormModel'
 import Pagination from '@/components/Pagination'
 import TeacherTable from '@/components/Table'
 import TableSearch from '@/components/TableSearch'
-import { assignmentsData, examsData, lessonsData, role } from '@/lib/data'
+import { assignmentsData, role } from '@/lib/data'
 import Image from 'next/image'
 import Link from 'next/link'
-import { it } from 'node:test'
 import React from 'react'
 
 type Assignment = {
